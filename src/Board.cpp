@@ -18,6 +18,25 @@ namespace chessxx
         return pieces[file + rank*files];
     }
     
+    void Board::DebugPrint(void)
+    {
+        int wid = 12;
+        std::string line = BufStr("", '-', wid*files + files + 1);
+        WriteLine(line);
+        for (int j = ranks-1; j >= 0; j--)
+        {
+            std::string bits = "|";
+            for (int i = 0; i < files; i++)
+            {
+                ChessPiece*& p = Piece(i, j);
+                if (p) bits += (Piece(i, j)->SimpleDisplayString() + "|");
+                else bits += (BufStr("", ' ', 12) + "|");
+            }
+            WriteLine(bits);
+            WriteLine(line);
+        }
+    }
+    
     Board::~Board(void)
     {
         for (int i = 0; i < files*ranks; i++)

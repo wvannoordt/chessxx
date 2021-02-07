@@ -2,7 +2,7 @@
 
 namespace chessxx
 {
-    Bishop::Bishop(int team_in) : ChessPiece(team_in, 3)
+    Bishop::Bishop(int team_in) : ChessPiece(team_in, 3, "bishop")
     {
         
     }

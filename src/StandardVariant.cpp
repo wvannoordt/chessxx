@@ -24,7 +24,9 @@ namespace chessxx
         board->Piece(5,7) = new Bishop(ChessTeam::Black);
         board->Piece(6,7) = new Knight(ChessTeam::Black);
         board->Piece(7,7) = new Rook  (ChessTeam::Black);
-        for (int i = 0; i < 8; i++) board->Piece(i,6) = new Pawn(ChessTeam::White);
+        for (int i = 0; i < 8; i++) board->Piece(i,6) = new Pawn(ChessTeam::Black);
+        
+        board->DebugPrint();
     }
     
     StandardVariant::~StandardVariant(void)

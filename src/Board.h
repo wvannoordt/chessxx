@@ -11,6 +11,7 @@ namespace chessxx
             Board(int ranks_in, int files_in);
             ~Board(void);
             ChessPiece*& Piece(int file, int rank);
+            void DebugPrint(void);
         private:
             int ranks, files;
             ChessPiece** pieces;
